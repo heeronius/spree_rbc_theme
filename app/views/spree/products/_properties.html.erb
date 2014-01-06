@@ -1,0 +1,12 @@
+<div class="columns six">
+  <h2><%= @product.name %></h2>
+  <% unless @product_properties.empty? %>  
+   <ul class="columns three alpha">
+       <% @product_properties.each do |product_property| %>
+           <li><strong><%= product_property.property.presentation %></strong></li>
+           <%= product_property.value %>
+       <% end %>
+   </ul>
+  <% end %>
+  <%= render :partial => 'cart_form' %>
+</div>
