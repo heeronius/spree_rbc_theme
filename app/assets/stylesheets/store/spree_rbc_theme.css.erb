@@ -1,11 +1,20 @@
 /*
  *= require store/screen
+ *= require store/rbc
  */
+
 
  #logo {
  	max-width: 100%;
  }
 
  body {
- 	background-image: url( <%= asset_path('bg.png') %>)
+ 	background-image: url( <%= asset_path('bg.png') %>);
+ 	background-attachment: fixed;
+ }
+
+
+
+.cart-stuff * {
+ 	border: 1px dotted;
  }

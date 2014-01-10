@@ -1,8 +1,9 @@
+<div class="columns omega four cart-stuff">
 <%= form_for :order, :url => populate_orders_path do |f| %>
-  <div id="inside-product-cart-form" class="columns three omega" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+  <div id="inside-product-cart-form" class="columns four omega" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 
-    <% if @product.price_in(current_currency) and !@product.price.nil? %>
-      <div data-hook="product_price" class="columns three <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
+    <% if !@product.price.nil? %>
+      <div data-hook="product_price" class="columns four <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
         
         <div id="product-price">
           <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
@@ -19,18 +20,14 @@
         </div>
 
         <div class="add-to-cart">
-          <%= number_field_tag (@product.variants_and_option_values.any? ? :quantity : "variants[#{@product.master.id}]"),
+          <strong>Quantity</strong><%= number_field_tag (@product.variants_and_option_values.any? ? :quantity : "variants[#{@product.master.id}]"),
             1, :class => 'title', :min => 1 %>
           <%= button_tag :class => 'large primary', :id => 'add-to-cart-button', :type => :submit do %>
             <%= Spree.t(:add_to_cart) %>
           <% end %>
         </div>
       </div>
-    <% else %>
-        <div id="product-price">
-          <br>
-          <div><span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span></div>
-        </div>
     <% end %>    
   </div>
 <% end %>
+</div>

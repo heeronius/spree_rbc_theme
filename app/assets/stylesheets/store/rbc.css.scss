@@ -1,0 +1,66 @@
+@import 'variables';
+
+body {
+	font-size: $base_font_size;
+}
+
+
+a {
+  text-decoration: none;
+  color: $link_text_color;
+
+  &:hover {
+    color: #404042;
+  }
+
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+#main-nav-bar {
+ 	text-align: center;
+ 	li {
+ 		display: inline;
+ 		padding-left: 30px;
+ 		padding-right: 30px;
+		a {
+ 			display: inline-block;
+ 		}
+ 	}
+ }
+
+.location { 
+ 	margin-top: 15px;
+ 	padding: 15px;
+ 	background: $box_background_color;
+ 	li {
+ 		list-style-type: none;
+	}
+  .contact-info {
+    li {
+      padding_left: 15px;
+    }
+  }
+}
+
+.property {   
+  link-style-type: none;
+}
+
+#sidebar {
+  ul {
+    list-style-type: none;
+    padding-left: 15px;
+  }
+}
+
+#footer-right {
+	float: right;
+}
+ #footer-pages {
+ 	li {
+ 		list-style-type: none;
+ 		padding-left: 15px;
+ 	}
+ }

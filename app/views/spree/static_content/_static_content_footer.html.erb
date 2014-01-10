@@ -1,0 +1,6 @@
+<nav id="footer-pages">
+  <ul>
+  	<li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
+    <li id="store-link"> <%= link_to "Store", spree.products_path %></li>
+  	<%= render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.footer_links, :as => :page %></ul>
+</nav>

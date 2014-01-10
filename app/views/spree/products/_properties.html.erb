@@ -1,12 +1,10 @@
-<div class="columns six">
-  <h2><%= @product.name %></h2>
-  <% unless @product_properties.empty? %>  
-   <ul class="columns three alpha">
-       <% @product_properties.each do |product_property| %>
-           <li><strong><%= product_property.property.presentation %></strong></li>
-           <%= product_property.value %>
-       <% end %>
+<div class="columns alpha four properties-stuff">
+  <ul class="product-properties">
+     <% @product_properties.each do |product_property| %>
+        <li class="property">
+          <div class="property-presentation"><strong><%= product_property.property.presentation %></strong></div>
+          <div class="property-value"><%= product_property.value %></div>
+        </li>
+      <% end %>
    </ul>
-  <% end %>
-  <%= render :partial => 'cart_form' %>
 </div>
