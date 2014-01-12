@@ -1,14 +1,50 @@
 <% if Spree::Slide.published.count > 0 %>
-  <section id="slideshow">
-    <ul class="slide">
+  <style type="text/css">
+  .theme-default #slider {
+      margin:0 auto 0 auto;
+      height:246px; /* Make sure your images are the same size */
+  }
+  .slider-wrapper {
+      margin:0 auto 50px auto;
+  }
+  </style>
+
+  <div class="theme-default">
+    <div class="ribbon"></div>
+    <div id="slider" class="nivoSlider">
       <% Spree::Slide.published.order('position ASC').each do |s| %>
-        <li>
-          <h1><%= s.slide_name %></h1>
+        <% if s.body != "" %>
+          <%= link_to image_tag(s.slide_image.url, :title => '#' + s.slide_name.to_url), url_for(s.slide_link) %>
+        <% else %>
           <%= link_to image_tag(s.slide_image.url), url_for(s.slide_link) %>
-        </li>
+        <% end %>
       <% end %>
-    </ul>
-    <a title="<%= t(:previous) %>" class="slider-prev"><%= t(:previous)%></a>
-    <a title="<%= t(:next) %>" class="slider-next"><%= t(:next) %></a>
-  </section>
+    </div>
+
+    <% Spree::Slide.published.order('position ASC').each do |s| %>
+      <div id='<%= s.slide_name.to_url %>' class='nivo-html-caption'>
+        <%= s.body.html_safe %>
+      </div>
+    <% end %>
+  </div>
+
+  <script type="text/javascript">
+  $(window).load(function() {
+      $('#slider').nivoSlider({
+        effect:'fade', // Specify sets like: 'fold,fade,sliceDown'
+        animSpeed:500, // Slide transition speed
+        pauseTime:3000, // How long each slide will show
+        startSlide:0, // Set starting Slide (0 index)
+        directionNav:true, // Next & Prev navigation
+        directionNavHide:true, // Only show on hover
+        controlNav:true, // 1,2,3... navigation
+        keyboardNav:true, // Use left & right arrows
+        pauseOnHover:false, // Stop animation while hovering
+        manualAdvance:false, // Force manual transitions
+        captionOpacity:0.8, // Universal caption opacity
+        prevText: 'Prev', // Prev directionNav text
+        nextText: 'Next' // Next directionNav text
+      });
+  });
+  </script>
 <% end %>
