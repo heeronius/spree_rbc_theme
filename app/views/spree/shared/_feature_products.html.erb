@@ -1,9 +1,10 @@
-<% products = @searcher.retrieve_products.limit(10) %>
+<div class="buffer"></div>
+<% products = @searcher.retrieve_products.limit(8) %>
 
 <% if products.any? %>
 <ul id="products" class="inline product-listing" data-hook>
   <% products.each do |product| %>
-    <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", :name => "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+    <li id="product_<%= product.id %>" class="columns four <%= cycle("alpha", "secondary", "", "omega secondary", :name => "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
       <div class="product-image">
         <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
       </div>

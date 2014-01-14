@@ -9,9 +9,7 @@ a {
   text-decoration: none;
   color: $link_text_color;
 
-  &:hover {
-    color: #404042;
-  }
+  
 
   &:active, &:focus {
     outline: none;

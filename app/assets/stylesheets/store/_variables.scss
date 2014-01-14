@@ -7,7 +7,7 @@ $c_red:         #e45353 !default;  /* Error red      */
 $layout_background_color:   #FFFFFF !default;
 $title_text_color:          white !default;
 $body_text_color:           white !default;
-$link_text_color:           brown !default;
+$link_text_color:           #f09133 !default;
 
 $product_background_color:  #FFFFFF !default;
 $product_title_text_color:  #404042 !default;
@@ -17,12 +17,13 @@ $product_link_text_color:   #BBBBBB !default;
 /*--------------------------------------*/
 /* Fonts import from remote
 /*--------------------------------------*/
-@import url(//fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic|&subset=latin,cyrillic,greek,greek-ext,latin-ext,cyrillic-ext);
+@import url(//fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic|&subset=latin,cyrillic,greek,greek-ext,latin-ext,cyrillic-ext|Glegoo|Old+Standard+TT:400,400italic,700);
 
 /*--------------------------------------*/
 /* Font families
 /*--------------------------------------*/
-$ff_base:       'Ubuntu', sans-serif !default;
+$ff_base:       'Old Standard TT', serif !default;
+$ff_sansbase:   'Ubuntu', sans-serif !default;
 
 /*--------------------------------------
   | Font sizes
@@ -50,11 +51,11 @@ $ff_base:       'Ubuntu', sans-serif !default;
 /*|------------------------------------
   |- Basic
   |                                  */
-      $heading_font_size:                     24px !default;
-      $sub_heading_font_size:                 14px !default;
+      $base_font_size:                        16px !default;
+      $heading_font_size:                     $base_font_size * 3.0 !default;
+      $sub_heading_font_size:                 $base_font_size * 1.5 !default;
       $button_font_size:                      12px !default;
       $input_box_font_size:                   13px !default;
-      $base_font_size:                        12px !default;
       $border_color:                          lighten($body_text_color, 60) !default;
       $default_border:                        1px solid $border_color !default;
       $button_border_color:                   rgba(0, 138, 189, .75) !default;
@@ -63,4 +64,4 @@ $ff_base:       'Ubuntu', sans-serif !default;
   |- RBC Theme Layout Variables
   |                                  */
 	$layout_background_color:   #8c6239 !default;
-	$box_background_color: rgba(64, 64, 66, .6);
+	$box_background_color: hsla(30, 75, 15, .6)

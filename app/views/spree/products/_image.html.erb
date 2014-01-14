@@ -1,7 +1,7 @@
-<article class="columns eight alpha">
+<article class="columns four alpha">
 	<% if defined?(image) && image %>
 	  <%= image_tag image.attachment.url(:product), :itemprop => "image" %>
 	<% else %>
-	  <%= rbc_product_image(@product, :itemprop => "image") %>
+	  <%= product_image(@product, :itemprop => "image") %>
 	<% end %>
 </article>
