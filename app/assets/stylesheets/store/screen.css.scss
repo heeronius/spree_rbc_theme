@@ -228,8 +228,12 @@ footer#footer {
   border-top: $default_border;
   font-family: $ff_sansbase;
 
-  h3 {
+  h5 {
     font-family: $ff_base;
+  }
+
+  .credits {
+    font-size: $base_font_size * .75;
   }
 }
 
