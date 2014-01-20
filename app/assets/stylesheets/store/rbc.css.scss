@@ -31,7 +31,7 @@ a {
 .location { 
  	margin-top: 15px;
  	padding: 15px;
- 	background: $box_background_color;
+ 	/** background: $box_background_color; **/
  	li {
  		list-style-type: none;
 	}
