@@ -1,10 +1,9 @@
 <div class="columns eight omega">
 	<div>
 		<h2><%= @product.name %></h2>
-		<hr>
 		<%= render :partial => 'spree/shared/social_media_share' %>
+		<hr>
 	</div>
-	<!-- Horizontal Rule -->
 	<%= render :partial => 'properties' %>
 	<%=  render :partial => 'cart_form' %>
 </div>

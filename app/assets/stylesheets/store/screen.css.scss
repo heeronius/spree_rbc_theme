@@ -160,10 +160,10 @@ fieldset {
 
 input[type="submit"], input[type="button"],
 input[type= "reset"], button, a.button {
-  background-color: $link_text_color;
+  background-color: $layout_background_color;
   background-image: none;
   text-shadow: none;
-  color: $layout_background_color;
+  color: $link_text_color;
   font-weight: bold;
   font-size: $button_font_size;
   font-family: $ff_sansbase;
@@ -191,15 +191,13 @@ input[type= "reset"], button, a.button {
   }
 
   &.gray {
-    background-color: lighten($body_text_color, 20);
-    border-color: lighten($body_text_color, 10);
   }
 
   &:hover {
     background-image: none;
     background-color: #c97a2c;
     border-color: $body_text_color;
-    color: $layout_background_color;
+    color: $link_text_color;
   }
 }
 
@@ -622,6 +620,9 @@ ul#products {
 
 #product-variants {
   ul {
+
+    list-style-type: none;
+    
     li {
       padding: 5px;
     }
@@ -653,6 +654,7 @@ ul#products {
 .progress-steps {
   list-style: decimal inside;
   overflow: auto;
+  margin-bottom: 45px;
 
   li {
     float: left;
@@ -847,7 +849,7 @@ ul#products {
   }
 
   .stock-shipping-method-title {
-    background-color: lighten($body_text_color, 70);
+    background-color: $layout_background_color;
     text-align: center;
     text-transform: uppercase;
     font-weight: normal;
@@ -859,7 +861,7 @@ ul#products {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: normal;
-    background-color: $link_text_color;
+    background-color: $layout_background_color;
     color: white;
   }
 
@@ -890,7 +892,7 @@ ul#products {
 
   table.stock-contents {
     thead {
-      background-color: lighten($body_text_color, 70);
+      background-color: $layout_background_color
 
       th {
         font-size: 11px;
@@ -1330,5 +1332,32 @@ table.order-summary {
 }
 
 .buffer-top {
-  margin-top: 38px;
+  margin-top: 35px;
 }
+
+
+.product-properties {
+  list-style-type: none;
+
+  .property {
+    min-width: 100%;
+  }
+}
+
+.property-presentation {
+  display: block;
+  float: left;
+}
+.property-value {
+  display: block;
+  float: right;
+  clear: both;
+}
+
+#checkout {
+  
+  h1 {
+    font-size: $heading_font_size * .8;
+  }
+}
+

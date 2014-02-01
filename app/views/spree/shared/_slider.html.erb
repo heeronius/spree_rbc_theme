@@ -2,7 +2,8 @@
   <style type="text/css">
   .theme-default #slider {
       margin:0 auto 0 auto;
-      height:400px; /* Make sure your images are the same size */
+      min-height: 400px;
+      height: auto; /* Make sure your images are the same size */
   }
   .slider-wrapper {
       margin:0 auto 50px auto;
@@ -33,7 +34,7 @@
       $('#slider').nivoSlider({
         effect:'fade', // Specify sets like: 'fold,fade,sliceDown'
         animSpeed:500, // Slide transition speed
-        pauseTime:3000, // How long each slide will show
+        pauseTime:7000, // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
         directionNav:true, // Next & Prev navigation
         directionNavHide:true, // Only show on hover
