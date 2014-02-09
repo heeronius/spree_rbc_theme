@@ -302,18 +302,15 @@ nav #main-nav-bar {
   margin-top: 20px;
   border-bottom: $default_border;
   padding-bottom: 6px;
+  text-align: center;
 
   li {
 
     a {
       font-size: $horizontal_navigation_font_size;
       padding: 5px;
-    }
-
-    &:first-child {
-      a {
-        padding-left: 0
-      }
+      padding-left: 30px;
+      padding-right: 30px;
     }
 
     &#link-to-cart {
@@ -1031,6 +1028,12 @@ table.order-summary {
   }
 }
 
+#slider {
+    min-height: 461px;
+  }
+
+
+
 /* #Media Queries
 ================================================== */
 
@@ -1041,6 +1044,11 @@ table.order-summary {
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
+  
+  #slider {
+    min-height: 367px;
+  }
+  
   .container {
     padding-left: 10px;
     width: 758px;
@@ -1108,6 +1116,10 @@ table.order-summary {
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+  #slider {
+    min-height: 206px;
+  }
 
   footer#footer {
     width: auto;
@@ -1203,6 +1215,23 @@ table.order-summary {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
+
+  #slider {
+    min-height: 147px;
+  }
+
+  #main-nav-bar {
+    li {
+      display: block;
+      float: center;
+      text-align: center;
+    }
+
+    &:last-child {
+      clear: both;
+    }
+
+  }
 
   .progress-steps li {
     padding: 0;
@@ -1360,4 +1389,3 @@ table.order-summary {
     font-size: $heading_font_size * .8;
   }
 }
-
