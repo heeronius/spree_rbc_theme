@@ -1374,13 +1374,13 @@ table.order-summary {
 }
 
 .property-presentation {
+  clear: both;
   display: block;
   float: left;
 }
 .property-value {
   display: block;
   float: right;
-  clear: both;
 }
 
 #checkout {
